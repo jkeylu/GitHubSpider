@@ -1,0 +1,21 @@
+{
+  "name": "GitHubSpider",
+  "version": "0.0.1",
+  "description": "GitHub Spider",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:jkeylu/githubspider.git"
+  },
+  "author": "jKey Lu <jkeylu@gmail.com> (https://github.com/jkeylu)",
+  "private": true,
+  "dependencies": {
+    "needle": "~0.8.2"
+  },
+  "devDependencies": {
+    "mocha": "~2.2.1"
+  }
+}
