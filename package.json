@@ -4,7 +4,7 @@
   "description": "GitHub Spider",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec --timeout 60000"
   },
   "repository": {
     "type": "git",
