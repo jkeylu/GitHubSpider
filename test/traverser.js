@@ -8,7 +8,7 @@ describe('Traverser', function() {
     assert.equal('function', typeof Traverser);
   });
 
-  it('should emit a "error" event if `since` less then zero', function(done) {
+  it('should emit a "error" event when `since` less then zero', function(done) {
     var traverser = new Traverser();
     traverser.on('error', function(err) {
       assert.notEqual(null, err);
@@ -43,27 +43,19 @@ describe('Traverser', function() {
     traverser.traverse();
   });
 
-  it('should emit a "finish" event if no more repositories', function(done) {
+  it('should emit a "finish" event when no more repositories', function(done) {
     tokens.manager.init(TEST_TOKEN);
     var traverser = new Traverser();
     traverser.on('finish', function(since) {
-      assert.notEqual(null, since);
-      assert.notEqual(undefined, since);
-      assert.equal('number', typeof since);
-      assert.equal(1000000000, since);
       done();
     });
     traverser.traverse(1000000000);
   });
 
-  it('should emit a "finish" event if `since` less than `breakId`', function(done) {
+  it('should emit a "finish" event when `since` less than `breakId`', function(done) {
     tokens.manager.init(TEST_TOKEN);
     var traverser = new Traverser();
     traverser.on('finish', function(since) {
-      assert.notEqual(null, since);
-      assert.notEqual(undefined, since);
-      assert.equal('number', typeof since);
-      assert(since > 0)
       done();
     });
     traverser.traverse(0, 1);
