@@ -29,3 +29,5 @@ node_modules
 *.swp
 .DS_Store
 config.json
+tmp/*
+!tmp/.empty
