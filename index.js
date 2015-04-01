@@ -21,6 +21,6 @@ mongodb.MongoClient.connect(config.mongodbUrl, function(err, database) {
 
   app.db = new Db(database);
 
-  var spider = new Spider(app);
-  spider.init().run();
+  app.spider = new Spider(app);
+  app.spider.init().run();
 });
