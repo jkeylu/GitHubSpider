@@ -1,5 +1,7 @@
 var mongodb = require('mongodb')
+  , elasticsearch = require('elasticsearch')
   , tokens = require('./lib/tokens')
+  , GithubApi = require('./lib/github_api')
   , Db = require('./lib/db')
   , Spider = require('./lib/spider')
   , config = require('./config.json');
@@ -7,9 +9,14 @@ var mongodb = require('mongodb')
 var tokenManager = new tokens.TokenManager();
 tokenManager.init(config.tokens);
 
+var es = new elasticsearch.Client(config.elasticsearch);
+var githubApi = new GithubApi(tokenManager);
+
 var app = {
   config: config,
-  tokenManager: tokenManager
+  tokenManager: tokenManager,
+  es: es,
+  githubApi: githubApi
 };
 
 mongodb.MongoClient.connect(config.mongodbUrl, function(err, database) {
