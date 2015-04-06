@@ -6,6 +6,10 @@
     "d84433074c09087135eebec063e7275dc8c8ddf8",
     "495cabfabe011e5600cccbe990b18de233f17cd4"
   ],
-  "elasticsearch": {},
-  "runPreviousWorker": false
+  "elasticsearch": {
+    "host": "localhost:9200",
+    "log": "trace"
+  },
+  "runPreviousWorker": false,
+  "runElasticsearchWorker": false
 }
