@@ -25,6 +25,7 @@
     production : {
       user : "pm2",
       host : "gitstars.com",
+      port : "46800",
       ref  : "origin/master",
       repo : "git@bitbucket.org:jkeylu/githubspider.git",
       path : "/home/pm2",
