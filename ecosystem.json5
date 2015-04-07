@@ -28,7 +28,7 @@
       port : "46800",
       ref  : "origin/master",
       repo : "git@bitbucket.org:jkeylu/githubspider.git",
-      path : "/home/pm2",
+      path : "/home/pm2/GitHubSpider",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json5 --env production"
     }
   }
