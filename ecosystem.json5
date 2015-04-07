@@ -1,0 +1,34 @@
+{
+  /**
+   * Here we declare the apps that must be managed by PM2
+   * All options are listed here:
+   * https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md#json-app-declaration
+   *
+   */
+  apps : [
+    {
+      name      : "GitHubSpider",
+      script    : "index.js",
+      env_production : {
+        NODE_ENV: "production"
+      }
+    }
+  ],
+
+
+  /**
+   * PM2 help you to deploy apps over your servers
+   * For more help go to :
+   * https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md#deployment-pm2--090
+   */
+  deploy : {
+    production : {
+      user : "pm2",
+      host : "gitstars.com",
+      ref  : "origin/master",
+      repo : "git@bitbucket.org:jkeylu/githubspider.git",
+      path : "/home/pm2",
+      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json5 --env production"
+    }
+  }
+}
