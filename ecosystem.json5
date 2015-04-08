@@ -9,7 +9,7 @@
     {
       name      : "GitHubSpider",
       script    : "index.js",
-      log_date_format: "YYYY-MM-DD HH:mm:ss Z",
+      log_date_format: "YY-MM-DD HH:mm:ss Z",
       env_production : {
         NODE_ENV: "production"
       }
